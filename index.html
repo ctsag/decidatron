@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Decidatron - Spin the Wheel</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤘</text></svg>">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>🤘 I am the one Decidatron 🤘</h1>
+            <p class="subtitle">Spin the wheel to decide your fate!</p>
+
+            <div class="main-layout">
+                <div class="wheel-column">
+                    <div class="wheel-container">
+                        <div class="pointer"></div>
+                        <canvas id="wheel" width="400" height="400"></canvas>
+                    </div>
+
+                    <div class="result" id="result">Press spin to start!</div>
+
+                    <div class="timer" id="timer"></div>
+
+                    <button id="spinButton">🎯 SPIN!</button>
+                    <div class="spins-counter" id="spinsCounter">Spins: 0</div>
+                </div>
+
+                <div class="options-section">
+                    <div class="countdown-settings">
+                        <h2>Countdown</h2>
+                        <div class="countdown-fields">
+                            <div class="countdown-field prep-field">
+                                <label for="prepTime">Prep (s):</label>
+                                <input type="number" id="prepTime" value="2" min="0" max="1800">
+                            </div>
+                            <div class="countdown-field countdown-min-field">
+                                <label for="countdownMinutes">Countdown (m):</label>
+                                <input type="number" id="countdownMinutes" value="0" min="0" max="30">
+                            </div>
+                            <div class="countdown-field countdown-sec-field">
+                                <label for="countdownSeconds">Countdown (s):</label>
+                                <input type="number" id="countdownSeconds" value="10" min="0" max="59">
+                                <div class="field-error hidden" id="countdownSecondsError">Must be 0–59</div>
+                            </div>
+                            <div class="countdown-field checkbox-field">
+                                <label for="enableCountdown">Enable</label>
+                                <input type="checkbox" id="enableCountdown">
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Your Options</h2>
+                    <div class="add-option">
+                        <input type="text" id="optionInput" placeholder="Enter an option..." maxlength="40">
+                        <button id="addButton" class="small-btn add-btn">+ Add</button>
+                    </div>
+                    <div class="option-error" id="optionError"></div>
+                    <ul class="options-list" id="optionsList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
